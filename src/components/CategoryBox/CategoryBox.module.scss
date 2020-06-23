@@ -1,0 +1,32 @@
+$inactive-color: #616356;
+$active-color: #ffffff;
+
+@mixin transition {
+  transition: all 210ms ease-in;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 40px;
+  border-bottom: solid 1px $inactive-color;
+  padding-bottom: 10px;
+  cursor: pointer;
+  @include transition;
+
+  svg {
+    width: 28px;
+    height: 30px;
+    fill: $inactive-color;
+    @include transition;
+  }
+}
+.boxActive {
+  border-bottom: solid 1px $active-color;
+
+  svg {
+    fill: $active-color;
+  }
+}
