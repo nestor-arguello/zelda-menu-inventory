@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { container } from './Categories.module.scss';
 
-import { ReactComponent as Sword } from '../../img/sword.svg';
-import { ReactComponent as Shield } from '../../img/shield.svg';
-import { ReactComponent as Armor } from '../../img/armor.svg';
+import { ReactComponent as Sword } from '../../images/sword.svg';
+import { ReactComponent as Shield } from '../../images/shield.svg';
+import { ReactComponent as Armor } from '../../images/armor.svg';
 
 import CategoryBox from '../CategoryBox/CategoryBox';
 

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { box } from './ItemBox.module.scss';
+import { box, activeBox } from './ItemBox.module.scss';
 
-const ItemBox = ({img, ...props}) => {
+const ItemBox = ({ img, isActive, ...props }) => {
   return (
-    <div className={box}>
-      {img }
+    <div className={isActive ? `${box} ${activeBox}` : `${box}`}>
+      {img && <img src={img} alt="item"/>}
     </div>
-  )
+  );
 };
 
 export default ItemBox;

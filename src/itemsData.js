@@ -9,7 +9,8 @@ const rawData = [
     description: `Zora headgear made from dragon scales. Increases swimming speed and allows you to use Spin Attack.`,
     bonus: 'swimming',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Zora_Helm_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/cQFw52B/Bot-W-Zora-Helm-Icon.png`,
   },
   {
     name: `Zora Armor`,
@@ -19,7 +20,8 @@ const rawData = [
     description: `Custom armor painstakingly crafted by each generation's Zora princess for her future husband. Wearing it will give you the ability to swim up waterfalls.`,
     bonus: 'swimming',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Zora_Armor_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/5LWyKfL/Bot-W-Zora-Armor-Icon.png`,
   },
   {
     name: `Zora Greaves`,
@@ -29,7 +31,8 @@ const rawData = [
     description: `These greave have been passed down among the Zora for generations. It's been said they're crafted using dragon scales. Equip them to swim faster.`,
     bonus: 'swimming',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Zora_Greaves_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/1qj5dxn/Bot-W-Zora-Greaves-Icon.png`,
   },
   {
     name: `Climber's Bandanna`,
@@ -39,7 +42,8 @@ const rawData = [
     description: `It may look like a regular bandanna, but it's actually infused with ancient technology that enhances core strength to improve your climbing ability.`,
     bonus: 'climbing',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Climber's_Bandanna_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/3cKg6XW/Bot-W-Climber-039-s-Bandanna-Icon.png`,
   },
   {
     name: `Climbing Gear`,
@@ -49,7 +53,8 @@ const rawData = [
     description: `The ancient technology in this gear will make you a better climber. The special no-slip gloves help you use your energy more efficiently to facilitate nimble climbing.`,
     bonus: 'climbing',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Climbing_Gear_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/X5Ddphg/Bot-W-Climbing-Gear-Icon.png`,
   },
   {
     name: `Climbing Boots`,
@@ -59,7 +64,8 @@ const rawData = [
     description: `These rock-climbing boots have special no-slip toes that help you cling to walls. This ancient technology facilitates more nimble climbing.`,
     bonus: 'climbing',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Climbing_Boots_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/Lpk4vX2/Bot-W-Climbing-Boots-Icon.png`,
   },
   {
     name: `Flamebreaker Helm`,
@@ -69,7 +75,8 @@ const rawData = [
     description: `Stone headgear made by Goron craftsmen to protect tourists visiting Goron City. As if its flame resistance isn't enough of a selling point, it also covers your entire head!`,
     bonus: 'resistFire',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Flamebreaker_Helm_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/bNGfJFx/Bot-W-Flamebreaker-Helm-Icon.png`,
   },
   {
     name: `Flamebreaker Armor`,
@@ -79,7 +86,8 @@ const rawData = [
     description: `Armor crafted by Gorons for Hylians curious enough to visit Goron City. It's made from fire-resistant rocks to protect the wearer.`,
     bonus: 'resistFire',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Flamebreaker_Armor_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/j5hthKp/Bot-W-Flamebreaker-Armor-Icon.png`,
   },
   {
     name: `Flamebreaker Boots`,
@@ -89,7 +97,8 @@ const rawData = [
     description: `Goron artisans used flame-resistant rocks to craft these fireproof boots for curious Hylians visiting Goron City.`,
     bonus: 'resistFire',
     isEquipped: false,
-    image: `/src/img/armors/BotW_Flamebreaker_Boots_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/nMG483C/Bot-W-Flamebreaker-Boots-Icon.png`,
   },
   {
     name: `Cap of the Hero`,
@@ -99,7 +108,8 @@ const rawData = [
     description: `According to legend, this cap was once treasured by an ancient hero. It's quite the simple cap, yet there's something about it that's just so appealing...`,
     bonus: null,
     isEquipped: false,
-    image: '/src/img/armors/BotW_Cap_of_the_Hero_Icon.png',
+    isNew: false,
+    imageURL: 'https://i.ibb.co/6JwHd9R/Bot-W-Cap-of-the-Hero-Icon.png',
   },
   {
     name: `Champion's Tunic`,
@@ -109,7 +119,8 @@ const rawData = [
     description: `In ancient Hyrule, this garment could only be worn by one who had earned the respect of the royal family. Equipping it will reveal an enemy's life gauge.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/armors/BotW_Champion's_Tunic_Icon.png`,
+    isNew: true,
+    imageURL: `https://i.ibb.co/XjLQqN7/Bot-W-Champion-039-s-Tunic-Icon.png`,
   },
   {
     name: `Hylian Trousers`,
@@ -119,7 +130,8 @@ const rawData = [
     description: `Traditional dress trousers of Hyrule. The plush fabric makes these trousers quite comfortable, and their high durability makes them ideal for travelers.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/armors/BotW_Hylian_Trousers_Icon.png`,
+    isNew: true,
+    imageURL: `https://i.ibb.co/vJSNwyh/Bot-W-Hylian-Trousers-Icon.png`,
   },
   {
     name: `Wooden Shield`,
@@ -129,7 +141,8 @@ const rawData = [
     description: `This lightweight, simple shield is ideal for less-experienced fighters. It can withstand light attacks, but blocking stronger blows is not recommended.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/shields/BotW_Wooden_Shield_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/SQ9Wf8C/Bot-W-Wooden-Shield-Icon.png`,
   },
   {
     name: `BotW Traveler's Shield`,
@@ -139,7 +152,8 @@ const rawData = [
     description: `A sturdy shield loved by many an adventurer. It is made of animal hide and sturdy wood and is best suited to defending against weak monsters or animals.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/shields/BotW_Traveler's_Shield_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/b55kV80/Bot-W-Traveler-039-s-Shield-Icon.png`,
   },
   {
     name: `BotW Gerudo Shield`,
@@ -149,7 +163,8 @@ const rawData = [
     description: `The design of this metal shield has changed over time to match the Gerudo's sword-and-shield fighting style. It's favored by soldiers and travelers alike.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/shields/BotW_Gerudo_Shield_Icon.png`,
+    isNew: true,
+    imageURL: `https://i.ibb.co/6sLJP4F/Bot-W-Gerudo-Shield-Icon.png`,
   },
   {
     name: `BotW Ancient Shield`,
@@ -159,7 +174,8 @@ const rawData = [
     description: `This shield was made using ancient Sheikah technology. Its surface glows blue when raised in defense. Enhanced functionality allows it to deflect Guardian beams.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/shields/BotW_Ancient_Shield_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/T10C0Ny/Bot-W-Ancient-Shield-Icon.png`,
   },
   {
     name: `Tree Branch`,
@@ -169,7 +185,8 @@ const rawData = [
     description: `Wooden branches such as this are pretty common, but it's surprisingly well-balanced. It doesn't do much damage but can serve as a weapon in a pinch.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Tree_Branch_Icon.png`,
+    isNew: true,
+    imageURL: `https://i.ibb.co/jzC5kg1/Bot-W-Tree-Branch-Icon.png`,
   },
   {
     name: `Ancient Short Sword`,
@@ -179,7 +196,8 @@ const rawData = [
     description: `The blade of this sword was made using an ancient power lost to this modern age. Its blade appears only when drawn, and its cutting power surpasses metal swords.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Ancient_Short_Sword_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/HzSMLmY/Bot-W-Ancient-Short-Sword-Icon.png`,
   },
   {
     name: `Dragonbone Boko Club`,
@@ -189,7 +207,8 @@ const rawData = [
     description: `This Bokoblin club has been reinforced with fossilized bones to maximize clobbering potential. Only the brawniest of Bokoblins can manage its immense weight.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Dragonbone_Boko_Club_Icon.png`,
+    isNew: true,
+    imageURL: `https://i.ibb.co/JxSnM2s/Bot-W-Dragonbone-Boko-Club-Icon.png`,
   },
   {
     name: `Feathered Edge`,
@@ -199,7 +218,8 @@ const rawData = [
     description: `Rito craftsmen forged this lightweight, double-edge sword so Rito warriors could soar into battle unhindered by its weight.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Feathered_Edge_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/28rrjFp/Bot-W-Feathered-Edge-Icon.png`,
   },
   {
     name: `Flameblade`,
@@ -209,7 +229,8 @@ const rawData = [
     description: `This magical sword was forged in the lava of Death Mountain. It leaves white-hot flames in its wake when the blade glows red.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Flameblade_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/3vY7ZQm/Bot-W-Flameblade-Icon.png`,
   },
   {
     name: `Soldier's Broadsword`,
@@ -219,7 +240,8 @@ const rawData = [
     description: `A sword brandished by the soldiers who once protected Hyrule Castle. Its durable blade is well tuned for slaying monsters.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Soldier's_Broadsword_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/QKJjKym/Bot-W-Soldier-039-s-Broadsword-Icon.png`,
   },
   {
     name: `Royal Claymore`,
@@ -229,7 +251,8 @@ const rawData = [
     description: `A two-handed sword issued to the Hyrulean royal family's immediate guard detail. Its powerful strikes are said to crush an opponent's body and resolve alike.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Royal_Claymore_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/fdRK50X/Bot-W-Royal-Claymore-Icon.png`,
   },
   {
     name: `Master Sword`,
@@ -239,7 +262,8 @@ const rawData = [
     description: `The Legendary sword that seals the darkness. Its blade gleams with a sacred luster that can oppose the Calamity. Only a hero chosen by the sword itself may wield it.`,
     bonus: null,
     isEquipped: false,
-    image: `/src/img/weapons/BotW_Master_Sword_Icon.png`,
+    isNew: false,
+    imageURL: `https://i.ibb.co/1Qs8WY4/Bot-W-Master-Sword-Icon.png`,
   },
 ];
 

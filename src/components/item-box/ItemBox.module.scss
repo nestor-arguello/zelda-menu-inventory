@@ -1,15 +1,21 @@
 $bg-color: #000000;
-$border-color: #2F3124;
+$inactive-border-color: #2F3124;
+$active-border-color: #F8F7D9;
 
 .box {
   width: 100%;
   height: 78px;
   background-color: $bg-color;
-  border: solid 1px $border-color;
+  border: solid 1px $inactive-border-color;
   cursor: pointer;
 
   img {
     width: 100%;
     height: auto;
   }
+}
+
+.activeBox {
+  border-color: $active-border-color;
+  box-shadow: 0 0 8 $active-border-color;
 }
