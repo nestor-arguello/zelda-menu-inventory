@@ -1,7 +1,6 @@
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 78px);
-  gap: 25px;
-  margin-top: 25px;
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

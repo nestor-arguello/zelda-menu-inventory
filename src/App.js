@@ -11,8 +11,8 @@ function App() {
     <Layout>
       <Categories />
       <ItemsGrid />
-      <div style={{color: 'white'}}>BonusBoxes</div>
-      <div style={{color: 'white'}}>ItemDescription</div>
+      <div style={{color: 'white', marginTop: '30px'}}>BonusBoxes</div>
+      <div style={{color: 'white', marginTop: '30px'}}>ItemDescription</div>
     </Layout>
   </div>;
 }

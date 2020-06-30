@@ -1,26 +1,24 @@
 import React from 'react';
-
-import { container } from './ItemsGrid.module.scss';
-
 import { connect } from 'react-redux';
-import ItemBox from '../item-box/ItemBox';
-import { getShields } from '../../redux/selectors';
+import { createStructuredSelector } from 'reselect';
 
-const NUMBER_OF_BOXES = 20;
-const numberOfBoxes = Array.from({ length: NUMBER_OF_BOXES });
+import { wrapper } from './ItemsGrid.module.scss';
 
-const ItemsGrid = ({ shields, ...props }) => {
+import ItemBoxesContainer from '../item-boxes-container/ItemBoxesContainer';
+import { getCurrentCategoryItems } from '../../redux/selectors/inventorySelectors';
+
+const ItemsGrid = ({ currentCategoryItems, ...props }) => {
   return (
-    <div className={container}>
-      {numberOfBoxes.map((_, index) => (
-        <ItemBox key={index} img={shields[index] && shields[index].imageURL} />
-      ))}
+    <div className={wrapper}>
+    {/* <ItemBoxesContainer isHollow /> */}
+      <ItemBoxesContainer isActive categoryItems={currentCategoryItems} />
+
     </div>
   );
 };
 
-const mapStateToProps = state => ({
-  shields: getShields(state),
+const mapStateToProps = createStructuredSelector({
+  currentCategoryItems: getCurrentCategoryItems,
 });
 
 export default connect(mapStateToProps)(ItemsGrid);

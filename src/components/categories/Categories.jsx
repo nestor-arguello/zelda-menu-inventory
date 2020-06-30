@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { container } from './Categories.module.scss';
 
@@ -7,14 +9,18 @@ import { ReactComponent as Shield } from '../../images/shield.svg';
 import { ReactComponent as Armor } from '../../images/armor.svg';
 
 import CategoryBox from '../CategoryBox/CategoryBox';
+import { getCurrentCategoryIndex } from '../../redux/selectors/inventorySelectors';
+import { setCurrentCategoryIndex } from '../../redux/actions/inventoryActions';
 
 const CategoriesIcons = [<Sword />, <Shield />, <Armor />];
 
-const Categories = ({ ...props }) => {
-  const [categoryActivedIndex, setCategoryActivedIndex] = useState(0);
-
+const Categories = ({
+  currentCategoryIndex,
+  setCurrentCategoryIndex,
+  ...props
+}) => {
   const handleClick = index => () => {
-    setCategoryActivedIndex(index);
+    setCurrentCategoryIndex(index);
   };
 
   return (
@@ -22,7 +28,7 @@ const Categories = ({ ...props }) => {
       {CategoriesIcons.map((icon, index) => (
         <CategoryBox
           key={index}
-          isActive={categoryActivedIndex === index}
+          isActive={currentCategoryIndex === index}
           onClick={handleClick(index)}
         >
           {icon}
@@ -32,4 +38,12 @@ const Categories = ({ ...props }) => {
   );
 };
 
-export default Categories;
+const mapStateToProps = createStructuredSelector({
+  currentCategoryIndex: getCurrentCategoryIndex,
+});
+
+const mapDispatchToProps = {
+  setCurrentCategoryIndex,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Categories);
