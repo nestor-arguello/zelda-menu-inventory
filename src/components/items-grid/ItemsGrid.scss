@@ -1,0 +1,57 @@
+$decelerated-easing: (0, 0, 0.2, 1);
+$acelerated-easing: (0.4, 0, 1, 1);
+$standard-easing: (0.4, 0, 0.2, 1);
+
+$enter-duration: 230ms;
+$enter-delay: 30ms;
+$appear-duration: 240ms;
+$appear-delay: 40ms;
+
+@mixin slide-right-transition($duration, $delay, $bezier) {
+  transition: margin-right $duration $delay cubic-bezier($bezier),
+    opacity $duration $delay cubic-bezier($bezier);
+}
+
+.items-grid {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.slide-right-appear {
+  opacity: 0;
+  margin-right: 250px;
+}
+
+.slide-right-appear-active {
+  opacity: 1;
+  margin-right: 0;
+  @include slide-right-transition(
+    $appear-duration,
+    $appear-delay,
+    $decelerated-easing
+  );
+}
+
+.slide-right-enter {
+  opacity: 0;
+  margin-right: 250px;
+}
+
+.slide-right-enter-active {
+  opacity: 1;
+  margin-right: 0;
+  @include slide-right-transition($enter-duration, $enter-delay, $decelerated-easing);
+}
+
+.slide-right-exit {
+  opacity: 0;
+  display: none !important;
+}
+
+.slide-right-exit-active,
+.slide-right-exit-done {
+  opacity: 0;
+  display: none !important;
+}
