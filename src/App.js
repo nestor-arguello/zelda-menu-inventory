@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { mainWrapper } from './App.module.scss';
+import './App.scss';
 
 import Layout from './components/layout/Layout'
 import Categories from './components/categories/Categories';
 import ItemsGrid from './components/items-grid/ItemsGrid';
 
 function App() {
-  return <div className={mainWrapper}>
+  return <div className="App">
     <Layout>
       <Categories />
       <ItemsGrid />

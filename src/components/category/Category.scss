@@ -5,7 +5,7 @@ $active-color: #ffffff;
   transition: all 210ms ease-in;
 }
 
-.box {
+.Category {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,11 +22,12 @@ $active-color: #ffffff;
     fill: $inactive-color;
     @include transition;
   }
-}
-.boxActive {
-  border-bottom: solid 1px $active-color;
 
-  svg {
-    fill: $active-color;
-  }
+  &.active {
+    border-bottom: solid 1px $active-color;
+  
+    svg {
+      fill: $active-color;
+    }
+}
 }

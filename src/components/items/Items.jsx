@@ -1,30 +1,30 @@
 import React from 'react';
 
-import './ItemBoxesContainer.scss';
+import './Items.scss';
 
 import { BOXES_PER_CATEGORY } from '../../constants';
-import ItemBox from '../item-box/ItemBox';
+import Item from '../item/Item';
 
 const numberOfBoxes = Array.from({ length: BOXES_PER_CATEGORY });
 
-const ItemBoxesContainer = ({
+const Items = ({
   categoryItems,
   isActive,
   isHollow,
   ...props
 }) => {
   return (
-    <div className="item-boxes__container">
+    <div className="Items">
       {numberOfBoxes.map((_, boxIndex) => {
         const image =
           categoryItems &&
           categoryItems[boxIndex] &&
           categoryItems[boxIndex].imageURL;
 
-        return <ItemBox key={boxIndex} img={image} />;
+        return <Item key={boxIndex} img={image} />;
       })}
     </div>
   );
 };
 
-export default ItemBoxesContainer;
+export default Items;

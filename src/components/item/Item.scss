@@ -2,20 +2,20 @@ $bg-color: #000000;
 $inactive-border-color: #2F3124;
 $active-border-color: #F8F7D9;
 
-.box {
+.Item {
   width: 100%;
   height: 78px;
   background-color: $bg-color;
   border: solid 1px $inactive-border-color;
   cursor: pointer;
 
+  &.active {
+    border-color: $active-border-color;
+    box-shadow: 0 0 8 $active-border-color;
+  }
+
   img {
     width: 100%;
     height: auto;
   }
-}
-
-.activeBox {
-  border-color: $active-border-color;
-  box-shadow: 0 0 8 $active-border-color;
 }

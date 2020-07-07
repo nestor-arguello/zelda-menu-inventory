@@ -5,13 +5,13 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import './ItemsGrid.scss';
 
-import ItemBoxesContainer from '../item-boxes-container/ItemBoxesContainer';
+import Items from '../items/Items';
 import { getCurrentCategoryItems, getCurrentCategoryIndex } from '../../redux/selectors/inventorySelectors';
 
 const ItemsGrid = ({ currentCategoryItems, currentCategoryIndex, ...props }) => {
   return (
       <TransitionGroup 
-        className="items-grid"
+        className="ItemsGrid"
       >
         <CSSTransition
           key={currentCategoryIndex}
@@ -20,7 +20,7 @@ const ItemsGrid = ({ currentCategoryItems, currentCategoryIndex, ...props }) => 
           classNames="slide-right"
           appear
         >
-          <ItemBoxesContainer categoryItems={currentCategoryItems} />
+          <Items categoryItems={currentCategoryItems} />
         </CSSTransition>
       </TransitionGroup>
   );
