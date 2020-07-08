@@ -1,16 +1,16 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import './Category.scss';
 
-/**
- * @TODO: remove box and boxes from names in components
- *        add classnames lib
- */
-
 const Category = ({ children, isActive, onClick, ...props }) => {
+  const categoryClasses = classNames('Category', {
+    active: isActive,
+  });
+
   return (
     <div
-      className={isActive ? 'Category active' : 'Category'}
+      className={categoryClasses}
       onClick={onClick}
     >
       {children}

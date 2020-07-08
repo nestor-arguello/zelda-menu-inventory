@@ -30,3 +30,5 @@ export const getCurrentCategoryItems = createSelector(
     return getItemsFromCategory(items, currentCategory);
   }
 );
+
+export const getCurrentItemIndex = state => state.inventory.currentItemIndex;

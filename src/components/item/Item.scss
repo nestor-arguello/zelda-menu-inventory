@@ -1,8 +1,30 @@
 $bg-color: #000000;
-$inactive-border-color: #2F3124;
-$active-border-color: #F8F7D9;
+$inactive-border-color: #2f3124;
+$active-border-color: #f8f7d9;
+$font-color: #f7f7f7;
+
+$decelerated-easing: (0, 0, 0.2, 1);
+$acelerated-easing: (0.4, 0, 1, 1);
+$standard-easing: (0.4, 0, 0.2, 1);
+
+@keyframes expanse {
+  0% {
+    width: 76px;
+    height: 76px;
+  }
+  50% {
+    width: 87px;
+    height: 87px;
+    position: absolute;
+  }
+  100% {
+    width: 76px;
+    height: 76px;
+  }
+}
 
 .Item {
+  position: relative;
   width: 100%;
   height: 78px;
   background-color: $bg-color;
@@ -11,11 +33,69 @@ $active-border-color: #F8F7D9;
 
   &.active {
     border-color: $active-border-color;
-    box-shadow: 0 0 8 $active-border-color;
+    box-shadow: 0 0 8px $active-border-color;
   }
 
   img {
     width: 100%;
     height: auto;
+  }
+
+  .corners {
+    position: absolute;
+    display: none;
+    width: 76px;
+    height: 76px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    animation: expanse 0.9s cubic-bezier($acelerated-easing) infinite;
+
+    &.active {
+      display: block;
+    }
+
+    .corner {
+      position: absolute;
+      height: 0;
+      width: 0;
+      border-bottom: 7px solid #f8f7d9;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      z-index: 5;
+
+      &.top-left {
+        transform: rotate(-45deg);
+        top: 0;
+        left: -3px;
+      }
+
+      &.top-right {
+        transform: rotate(45deg);
+        top: 0;
+        right: -3px;
+      }
+      &.bottom-right {
+        transform: rotate(135deg);
+        bottom: 0;
+        right: -3px;
+      }
+      &.bottom-left {
+        transform: rotate(-135deg);
+        bottom: 0;
+        left: -3px;
+      }
+    }
+  }
+
+  .quantity-box {
+    position: absolute;
+    color: $font-color;
+    bottom: -3px;
+    right: -4px;
+    border: 1px solid $inactive-border-color;
+    padding: 2px 9px;
+    background-color: $bg-color;
   }
 }
