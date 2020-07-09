@@ -3,7 +3,9 @@ import classNames from 'classnames';
 
 import './Item.scss';
 
-const Item = ({ img, value, isActive, onClick, ...props }) => {
+import { ReactComponent as NewItem } from '../../images/new-item.svg';
+
+const Item = ({ img, value, isActive, isNew, onClick, ...props }) => {
   const itemClasses = classNames('Item', {
     active: isActive,
   });
@@ -20,6 +22,7 @@ const Item = ({ img, value, isActive, onClick, ...props }) => {
         <div className="corner bottom-left" />
       </div>
       {img && <img src={img} alt="item" />}
+      {isNew && <div className="new-item"><NewItem /></div>}
       {img && <div className="quantity-box">{value}</div>}
     </div>
   );

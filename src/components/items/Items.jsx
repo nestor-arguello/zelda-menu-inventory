@@ -35,12 +35,17 @@ const Items = ({
           categoryItems[boxIndex].value;
 
         const isActive = boxIndex === currentItemIndex;
+        const isNew =
+          categoryItems &&
+          categoryItems[boxIndex] &&
+          categoryItems[boxIndex].isNew;
 
         return (
           <Item
             key={boxIndex}
             img={image}
             value={value}
+            isNew={isNew}
             isActive={isActive}
             onClick={handleClick(boxIndex)}
           />
