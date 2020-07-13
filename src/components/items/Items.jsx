@@ -18,7 +18,6 @@ const Items = ({
   ...props
 }) => {
   const handleClick = index => () => {
-    console.log(index)
     setCurrentItemIndex(index);
   };
 
@@ -39,12 +38,17 @@ const Items = ({
           categoryItems &&
           categoryItems[boxIndex] &&
           categoryItems[boxIndex].isNew;
+        const bonus =
+          categoryItems &&
+          categoryItems[boxIndex] &&
+          categoryItems[boxIndex].bonus;
 
         return (
           <Item
             key={boxIndex}
             img={image}
             value={value}
+            bonus={bonus}
             isNew={isNew}
             isActive={isActive}
             onClick={handleClick(boxIndex)}

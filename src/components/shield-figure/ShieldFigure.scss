@@ -1,0 +1,22 @@
+$shield-color: #03EE54;
+$inner-color: #0a461a;
+
+.ShieldFigure {
+  position: relative;
+    width: 38px;
+    height: 38px;
+    margin: 0 5px;
+    border-radius: 50%;
+    border: 3px solid $shield-color;
+
+  &__inner {
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    border: 8px solid $shield-color;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  }
+}

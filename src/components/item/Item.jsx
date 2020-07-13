@@ -3,27 +3,32 @@ import classNames from 'classnames';
 
 import './Item.scss';
 
-import { ReactComponent as NewItem } from '../../images/new-item.svg';
+import { NewItemIcon, bonusIcons } from '../../images/svgs';
 
-const Item = ({ img, value, isActive, isNew, onClick, ...props }) => {
+const Item = ({ img, value, isActive, isNew, bonus, onClick, ...props }) => {
   const itemClasses = classNames('Item', {
     active: isActive,
   });
-  const cornersClasses = classNames('corners', {
+  const cornersClasses = classNames('Item__corners', {
     active: isActive,
   });
 
   return (
     <div className={itemClasses} onClick={onClick}>
       <div className={cornersClasses}>
-        <div className="corner top-left" />
-        <div className="corner top-right" />
-        <div className="corner bottom-right" />
-        <div className="corner bottom-left" />
+        <div className="Item__corner top-left" />
+        <div className="Item__corner top-right" />
+        <div className="Item__corner bottom-right" />
+        <div className="Item__corner bottom-left" />
       </div>
       {img && <img src={img} alt="item" />}
-      {isNew && <div className="new-item"><NewItem /></div>}
-      {img && <div className="quantity-box">{value}</div>}
+      {isNew && (
+        <div className="Item__new-item">
+          <NewItemIcon />
+        </div>
+      )}
+      {bonus && <div className="Item__bonus">{bonusIcons[bonus]}</div>}
+      {img && <div className="Item__quantity-box">{value}</div>}
     </div>
   );
 };

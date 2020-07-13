@@ -1,5 +1,25 @@
+$bg-color: #0C1F0C;
+
 .App {
-  background-color: #112110;
+  background-color: $bg-color;
   min-height: 100vh;
   overflow: hidden;
+
+  &__items-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__information-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px 0;
+
+    & .iconography {
+      display: flex;
+      align-items: center;
+    }
+  }
 }

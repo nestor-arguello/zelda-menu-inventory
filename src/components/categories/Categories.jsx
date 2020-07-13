@@ -4,15 +4,11 @@ import { createStructuredSelector } from 'reselect';
 
 import './Categories.scss';
 
-import { ReactComponent as Sword } from '../../images/sword.svg';
-import { ReactComponent as Shield } from '../../images/shield.svg';
-import { ReactComponent as Armor } from '../../images/armor.svg';
-
+import { categoriesIcons } from '../../images/svgs';
 import Category from '../category/Category';
+
 import { getCurrentCategoryIndex } from '../../redux/selectors/inventorySelectors';
 import { setCurrentCategoryIndex } from '../../redux/actions/inventoryActions';
-
-const CategoriesIcons = [<Sword />, <Shield />, <Armor />];
 
 const Categories = ({
   currentCategoryIndex,
@@ -25,7 +21,7 @@ const Categories = ({
 
   return (
     <div className="Categories">
-      {CategoriesIcons.map((icon, index) => (
+      {Object.values(categoriesIcons).map((icon, index) => (
         <Category
           key={index}
           isActive={currentCategoryIndex === index}

@@ -8,6 +8,10 @@ import './ItemsGrid.scss';
 import Items from '../items/Items';
 import { getCurrentCategoryItems, getCurrentCategoryIndex } from '../../redux/selectors/inventorySelectors';
 
+/**
+ * TODO: find a component for swipping between grids
+ */
+
 const ItemsGrid = ({ currentCategoryItems, currentCategoryIndex, ...props }) => {
   return (
       <TransitionGroup 
