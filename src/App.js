@@ -9,6 +9,10 @@ import ShieldFigure from './components/shield-figure/ShieldFigure';
 import BonusBoxes from './components/bonus-boxes/BonusBoxes';
 import ItemDescription from './components/item-description/ItemDescription';
 
+/**
+ * TODO: move sass constants to one archive
+ */
+
 function App() {
   return (
     <div className="App">

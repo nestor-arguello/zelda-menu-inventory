@@ -1,5 +1,6 @@
 $inactive-color: #616356;
-$active-color: #ffffff;
+// $active-color: #ffffff;
+$active-color: #f7f7f7;
 
 @mixin transition {
   transition: all 210ms ease-in;

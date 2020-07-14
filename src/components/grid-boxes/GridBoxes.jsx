@@ -1,28 +1,28 @@
 import React from 'react';
 import { createStructuredSelector } from 'reselect';
 
-import './Items.scss';
+import './GridBoxes.scss';
 
 import { BOXES_PER_CATEGORY } from '../../constants';
-import Item from '../item/Item';
+import GridBox from '../grid-box/GridBox';
 import { connect } from 'react-redux';
-import { getCurrentItemIndex } from '../../redux/selectors/inventorySelectors';
-import { setCurrentItemIndex } from '../../redux/actions/inventoryActions';
+import { getcurrentGridBoxIndex } from '../../redux/selectors/inventorySelectors';
+import { setcurrentGridBoxIndex } from '../../redux/actions/inventoryActions';
 
 const numberOfBoxes = Array.from({ length: BOXES_PER_CATEGORY });
 
-const Items = ({
+const GridBoxes = ({
   categoryItems,
-  currentItemIndex,
-  setCurrentItemIndex,
+  currentGridBoxIndex,
+  setcurrentGridBoxIndex,
   ...props
 }) => {
   const handleClick = index => () => {
-    setCurrentItemIndex(index);
+    setcurrentGridBoxIndex(index);
   };
 
   return (
-    <div className="Items">
+    <div className="GridBoxes">
       {numberOfBoxes.map((_, boxIndex) => {
         const image =
           categoryItems &&
@@ -33,7 +33,7 @@ const Items = ({
           categoryItems[boxIndex] &&
           categoryItems[boxIndex].value;
 
-        const isActive = boxIndex === currentItemIndex;
+        const isActive = boxIndex === currentGridBoxIndex;
         const isNew =
           categoryItems &&
           categoryItems[boxIndex] &&
@@ -44,7 +44,7 @@ const Items = ({
           categoryItems[boxIndex].bonus;
 
         return (
-          <Item
+          <GridBox
             key={boxIndex}
             img={image}
             value={value}
@@ -60,11 +60,11 @@ const Items = ({
 };
 
 const mapStateToProps = createStructuredSelector({
-  currentItemIndex: getCurrentItemIndex,
+  currentGridBoxIndex: getcurrentGridBoxIndex,
 });
 
 const mapDispatchToProps = {
-  setCurrentItemIndex,
+  setcurrentGridBoxIndex,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Items);
+export default connect(mapStateToProps, mapDispatchToProps)(GridBoxes);

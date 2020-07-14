@@ -31,4 +31,6 @@ export const getCurrentCategoryItems = createSelector(
   }
 );
 
-export const getCurrentItemIndex = state => state.inventory.currentItemIndex;
+export const getcurrentGridBoxIndex
+ = state => state.inventory.currentGridBoxIndex
+;

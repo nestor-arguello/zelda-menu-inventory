@@ -1,6 +1,6 @@
 import {
   SET_CURRENT_CATEGORY_INDEX,
-  SET_CURRENT_ITEM_INDEX,
+  SET_CURRENT_GRID_BOX_INDEX,
 } from './actionTypes';
 
 export const setCurrentCategoryIndex = index => ({
@@ -8,7 +8,8 @@ export const setCurrentCategoryIndex = index => ({
   payload: index,
 });
 
-export const setCurrentItemIndex = index => ({
-  type: SET_CURRENT_ITEM_INDEX,
+export const setcurrentGridBoxIndex
+ = index => ({
+  type: SET_CURRENT_GRID_BOX_INDEX,
   payload: index,
 });

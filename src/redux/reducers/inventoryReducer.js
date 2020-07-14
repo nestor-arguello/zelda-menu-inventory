@@ -2,14 +2,14 @@ import itemsData from '../../itemsData';
 import { CATEGORIES } from '../../constants';
 import {
   SET_CURRENT_CATEGORY_INDEX,
-  SET_CURRENT_ITEM_INDEX,
+  SET_CURRENT_GRID_BOX_INDEX,
 } from '../actions/actionTypes';
 
 const initialState = {
   items: itemsData,
   categories: Object.values(CATEGORIES),
   currentCategoryIndex: 0,
-  currentItemIndex: 0,
+  currentGridBoxIndex: 0,
 };
 
 const inventoryReducer = (state = initialState, action) => {
@@ -20,10 +20,10 @@ const inventoryReducer = (state = initialState, action) => {
         currentCategoryIndex: action.payload,
       };
     }
-    case SET_CURRENT_ITEM_INDEX: {
+    case SET_CURRENT_GRID_BOX_INDEX: {
       return {
         ...state,
-        currentItemIndex: action.payload,
+        currentGridBoxIndex: action.payload,
       };
     }
     default:

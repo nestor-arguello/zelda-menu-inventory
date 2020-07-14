@@ -5,7 +5,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import './ItemsGrid.scss';
 
-import Items from '../items/Items';
+import GridBoxes from '../grid-boxes/GridBoxes';
 import { getCurrentCategoryItems, getCurrentCategoryIndex } from '../../redux/selectors/inventorySelectors';
 
 /**
@@ -24,7 +24,7 @@ const ItemsGrid = ({ currentCategoryItems, currentCategoryIndex, ...props }) => 
           classNames="slide-right"
           appear
         >
-          <Items categoryItems={currentCategoryItems} />
+          <GridBoxes categoryItems={currentCategoryItems} />
         </CSSTransition>
       </TransitionGroup>
   );
