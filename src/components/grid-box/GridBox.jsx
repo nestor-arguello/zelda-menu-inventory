@@ -5,7 +5,12 @@ import './GridBox.scss';
 
 import { NewItemIcon, bonusIcons } from '../../images/svgs';
 
-const GridBox = ({ img, value, isActive, isNew, bonus, onClick, ...props }) => {
+const GridBox = ({ item, isActive, isSelected, onClick, ...props }) => {
+  const image = item && item.imageURL;
+  const isNew = item && item.isNew;
+  const value = item && item.value;
+  const bonus = item && item.bonus;
+
   const gridBoxClasses = classNames('GridBox', {
     active: isActive,
   });
@@ -21,14 +26,14 @@ const GridBox = ({ img, value, isActive, isNew, bonus, onClick, ...props }) => {
         <div className="GridBox__corner bottom-right" />
         <div className="GridBox__corner bottom-left" />
       </div>
-      {img && <img src={img} alt="item" />}
+      {image && <img src={image} alt="item" />}
       {isNew && (
         <div className="GridBox__new-item">
           <NewItemIcon />
         </div>
       )}
       {bonus && <div className="GridBox__bonus">{bonusIcons[bonus]}</div>}
-      {img && <div className="GridBox__quantity-box">{value}</div>}
+      {image && <div className="GridBox__quantity-box">{value}</div>}
     </div>
   );
 };

@@ -10,6 +10,7 @@ const initialState = {
   categories: Object.values(CATEGORIES),
   currentCategoryIndex: 0,
   currentGridBoxIndex: 0,
+  isItemSelected: false,
 };
 
 const inventoryReducer = (state = initialState, action) => {
@@ -18,9 +19,17 @@ const inventoryReducer = (state = initialState, action) => {
       return {
         ...state,
         currentCategoryIndex: action.payload,
+        isItemSelected: false,
       };
     }
     case SET_CURRENT_GRID_BOX_INDEX: {
+      if (state.currentGridBoxIndex === action.payload) {
+        return {
+          ...state,
+        currentGridBoxIndex: action.payload,
+        isItemSelected: !state.isItemSelected,
+        }
+      }
       return {
         ...state,
         currentGridBoxIndex: action.payload,

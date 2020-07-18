@@ -10,7 +10,7 @@ import BonusBoxes from './components/bonus-boxes/BonusBoxes';
 import ItemDescription from './components/item-description/ItemDescription';
 
 /**
- * TODO: move sass constants to one archive
+ * TODO: move sass constants to a single archive
  */
 
 function App() {

@@ -6,51 +6,43 @@ import './GridBoxes.scss';
 import { BOXES_PER_CATEGORY } from '../../constants';
 import GridBox from '../grid-box/GridBox';
 import { connect } from 'react-redux';
-import { getcurrentGridBoxIndex } from '../../redux/selectors/inventorySelectors';
-import { setcurrentGridBoxIndex } from '../../redux/actions/inventoryActions';
+import {
+  getCurrentGridBoxIndex,
+  getCurrentItem,
+  getCurrentCategoryIndex,
+  getIsItemSelected,
+} from '../../redux/selectors/inventorySelectors';
+import { setCurrentGridBoxIndex } from '../../redux/actions/inventoryActions';
 
 const numberOfBoxes = Array.from({ length: BOXES_PER_CATEGORY });
 
 const GridBoxes = ({
   categoryItems,
   currentGridBoxIndex,
-  setcurrentGridBoxIndex,
+  setCurrentGridBoxIndex,
+  currentCategoryIndex,
+  currentItem,
+  isItemSelected,
   ...props
 }) => {
   const handleClick = index => () => {
-    setcurrentGridBoxIndex(index);
+    setCurrentGridBoxIndex(index);
   };
 
   return (
     <div className="GridBoxes">
+      {console.log('gridBoxes rendered!!')}
       {numberOfBoxes.map((_, boxIndex) => {
-        const image =
-          categoryItems &&
-          categoryItems[boxIndex] &&
-          categoryItems[boxIndex].imageURL;
-        const value =
-          categoryItems &&
-          categoryItems[boxIndex] &&
-          categoryItems[boxIndex].value;
+        const item = categoryItems && categoryItems[boxIndex];
 
         const isActive = boxIndex === currentGridBoxIndex;
-        const isNew =
-          categoryItems &&
-          categoryItems[boxIndex] &&
-          categoryItems[boxIndex].isNew;
-        const bonus =
-          categoryItems &&
-          categoryItems[boxIndex] &&
-          categoryItems[boxIndex].bonus;
 
         return (
           <GridBox
             key={boxIndex}
-            img={image}
-            value={value}
-            bonus={bonus}
-            isNew={isNew}
+            item={item}
             isActive={isActive}
+            isSelected={isItemSelected}
             onClick={handleClick(boxIndex)}
           />
         );
@@ -60,11 +52,14 @@ const GridBoxes = ({
 };
 
 const mapStateToProps = createStructuredSelector({
-  currentGridBoxIndex: getcurrentGridBoxIndex,
+  currentGridBoxIndex: getCurrentGridBoxIndex,
+  currentCategoryIndex: getCurrentCategoryIndex,
+  currentItem: getCurrentItem,
+  isItemSelected: getIsItemSelected,
 });
 
 const mapDispatchToProps = {
-  setcurrentGridBoxIndex,
+  setCurrentGridBoxIndex,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GridBoxes);

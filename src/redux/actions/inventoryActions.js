@@ -8,7 +8,7 @@ export const setCurrentCategoryIndex = index => ({
   payload: index,
 });
 
-export const setcurrentGridBoxIndex
+export const setCurrentGridBoxIndex
  = index => ({
   type: SET_CURRENT_GRID_BOX_INDEX,
   payload: index,
