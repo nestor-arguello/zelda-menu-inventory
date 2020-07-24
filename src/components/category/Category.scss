@@ -1,10 +1,4 @@
-$inactive-color: #616356;
-// $active-color: #ffffff;
-$active-color: #f7f7f7;
-
-@mixin transition {
-  transition: all 210ms ease-in;
-}
+@import '../../constants/sass';
 
 .Category {
   display: flex;
@@ -12,23 +6,23 @@ $active-color: #f7f7f7;
   align-items: center;
   width: 64px;
   height: 40px;
-  border-bottom: solid 1px $inactive-color;
+  border-bottom: solid 1px $category-inactive-color;
   padding-bottom: 10px;
   cursor: pointer;
-  @include transition;
+  @include category-transition;
 
   svg {
     width: 28px;
     height: 30px;
-    fill: $inactive-color;
-    @include transition;
+    fill: $category-inactive-color;
+    @include category-transition;
   }
 
   &.active {
-    border-bottom: solid 1px $active-color;
+    border-bottom: solid 1px $app-font-color;
   
     svg {
-      fill: $active-color;
+      fill: $app-font-color;
     }
 }
 }

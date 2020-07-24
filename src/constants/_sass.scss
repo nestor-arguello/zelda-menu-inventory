@@ -1,0 +1,69 @@
+// COLORS
+$app-bg-color: #0C1F0C;
+$app-font-color: #f7f7f7;
+
+$category-inactive-color: #616356;
+
+$item-bg-color: rgba(0, 0, 0, 0.5);
+$item-border-color: #2f3124;
+$item-value-border-color: #616356;
+$item-active-color: #0290fe;
+
+$grid-box-bg-color: #000000;
+$grig-box-inactive-border-color: #2f3124;
+$grid-box-active-border-color: #f8f7d9;
+$grid-box-new-item-color: #ffffbe;
+
+$active-meter-color: #0290FE;
+$inactive-meter-color: #2F3124;
+
+$shield-color: #03EE54;
+
+// CONSTANTS
+$decelerated-easing: (0, 0, 0.2, 1);
+$acelerated-easing: (0.4, 0, 1, 1);
+$standard-easing: (0.4, 0, 0.2, 1);
+
+$enter-duration: 230ms;
+$enter-delay: 30ms;
+$appear-duration: 240ms;
+$appear-delay: 40ms;
+
+// MIXINS 
+@mixin slide-right-transition($duration, $delay, $bezier) {
+  transition: margin-right $duration $delay cubic-bezier($bezier),
+    opacity $duration $delay cubic-bezier($bezier);
+}
+
+@mixin category-transition {
+  transition: all 210ms ease-in;
+}
+
+// ANIMATIONS
+@keyframes expanse {
+  0% {
+    width: 76px;
+    height: 76px;
+  }
+  50% {
+    width: 87px;
+    height: 87px;
+  }
+  100% {
+    width: 76px;
+    height: 76px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  50% {
+    transform: rotateZ(45deg) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateZ(90deg) scale(1);
+  }
+}

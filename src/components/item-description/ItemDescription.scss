@@ -1,19 +1,13 @@
-$bg-color: rgba(0, 0, 0, 0.5);
-$border-color: #2f3124;
-$value-border-color: #616356;
-// $font-color: #ffffff;
-$font-color: #f7f7f7;
-
-$item-active-color: #0290fe;
+@import '../../constants/sass';
 
 .ItemDescription {
   position: relative;
   width: 320px;
-  color: $font-color;
+  color: $app-font-color;
   margin-top: 25px;
   padding: 20px 24px;
-  background-color: $bg-color;
-  border: 1px solid $border-color;
+  background-color: $item-bg-color;
+  border: 1px solid $item-border-color;
 
   &__is-equipped {
     position: absolute;
@@ -28,7 +22,7 @@ $item-active-color: #0290fe;
     font-size: 21px;
     font-weight: 500;
     padding-bottom: 12px;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $item-border-color;
   }
 
   &__values {
@@ -44,13 +38,13 @@ $item-active-color: #0290fe;
       svg {
         width: 100%;
         height: 100%;
-        fill: $font-color;
+        fill: $app-font-color;
       }
     }
 
     .value {
       padding: 6px 12px;
-      border: 1px solid $value-border-color;
+      border: 1px solid $item-value-border-color;
       display: flex;
       justify-content: center;
       align-items: center;

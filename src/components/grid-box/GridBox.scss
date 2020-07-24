@@ -1,52 +1,16 @@
-$bg-color: #000000;
-$inactive-border-color: #2f3124;
-$active-border-color: #f8f7d9;
-$font-color: #f7f7f7;
-$new-item-color: #ffffbe;
-
-$decelerated-easing: (0, 0, 0.2, 1);
-$acelerated-easing: (0.4, 0, 1, 1);
-$standard-easing: (0.4, 0, 0.2, 1);
-
-@keyframes expanse {
-  0% {
-    width: 76px;
-    height: 76px;
-  }
-  50% {
-    width: 87px;
-    height: 87px;
-  }
-  100% {
-    width: 76px;
-    height: 76px;
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotateZ(0deg) scale(1);
-  }
-  50% {
-    transform: rotateZ(45deg) scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: rotateZ(90deg) scale(1);
-  }
-}
+@import '../../constants/sass';
 
 .GridBox {
   position: relative;
   width: 100%;
   height: 78px;
-  background-color: $bg-color;
-  border: solid 1px $inactive-border-color;
+  background-color: $grid-box-bg-color;
+  border: solid 1px $grig-box-inactive-border-color;
   cursor: pointer;
 
   &.active {
-    border-color: $active-border-color;
-    box-shadow: 0 0 8px $active-border-color;
+    border-color: $grid-box-active-border-color;
+    box-shadow: 0 0 8px $grid-box-active-border-color;
   }
 
   img {
@@ -68,41 +32,39 @@ $standard-easing: (0.4, 0, 0.2, 1);
     &.active {
       display: block;
     }
-
-    
   }
 
   &__corner {
-      position: absolute;
-      height: 0;
-      width: 0;
-      border-bottom: 7px solid #f8f7d9;
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      z-index: 5;
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-bottom: 7px solid #f8f7d9;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    z-index: 5;
 
-      &.top-left {
-        transform: rotate(-45deg);
-        top: 0;
-        left: -3px;
-      }
-
-      &.top-right {
-        transform: rotate(45deg);
-        top: 0;
-        right: -3px;
-      }
-      &.bottom-right {
-        transform: rotate(135deg);
-        bottom: 0;
-        right: -3px;
-      }
-      &.bottom-left {
-        transform: rotate(-135deg);
-        bottom: 0;
-        left: -3px;
-      }
+    &.top-left {
+      transform: rotate(-45deg);
+      top: 0;
+      left: -3px;
     }
+
+    &.top-right {
+      transform: rotate(45deg);
+      top: 0;
+      right: -3px;
+    }
+    &.bottom-right {
+      transform: rotate(135deg);
+      bottom: 0;
+      right: -3px;
+    }
+    &.bottom-left {
+      transform: rotate(-135deg);
+      bottom: 0;
+      left: -3px;
+    }
+  }
 
   &__new-item {
     position: absolute;
@@ -118,7 +80,7 @@ $standard-easing: (0.4, 0, 0.2, 1);
     svg {
       width: 100%;
       height: 100%;
-      fill: $new-item-color;
+      fill: $grid-box-new-item-color;
     }
   }
 
@@ -137,11 +99,11 @@ $standard-easing: (0.4, 0, 0.2, 1);
 
   &__quantity-box {
     position: absolute;
-    color: $font-color;
+    color: $app-font-color;
     bottom: -3px;
     right: -4px;
-    border: 1px solid $inactive-border-color;
+    border: 1px solid $grig-box-inactive-border-color;
     padding: 2px 9px;
-    background-color: $bg-color;
+    background-color: $grid-box-bg-color;
   }
 }

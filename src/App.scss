@@ -1,7 +1,7 @@
-$bg-color: #0C1F0C;
+@import './constants/sass';
 
 .App {
-  background-color: $bg-color;
+  background-color: $app-bg-color;
   min-height: 100vh;
   overflow: hidden;
 

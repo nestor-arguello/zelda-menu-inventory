@@ -1,9 +1,12 @@
 import React from 'react';
+import { createStructuredSelector } from 'reselect';
 import classNames from 'classnames';
 
 import './GridBox.scss';
 
 import { NewItemIcon, bonusIcons } from '../../images/svgs';
+import { connect } from 'react-redux';
+import { getIsItemSelected } from '../../redux/selectors/inventorySelectors';
 
 const GridBox = ({ item, isActive, isSelected, onClick, ...props }) => {
   const image = item && item.imageURL;
@@ -38,4 +41,8 @@ const GridBox = ({ item, isActive, isSelected, onClick, ...props }) => {
   );
 };
 
-export default GridBox;
+const mapStateToProps = createStructuredSelector({
+  isSelected: getIsItemSelected,
+});
+
+export default connect(mapStateToProps)(GridBox);

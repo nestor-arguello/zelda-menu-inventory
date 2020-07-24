@@ -9,8 +9,6 @@ import { connect } from 'react-redux';
 import {
   getCurrentGridBoxIndex,
   getCurrentItem,
-  getCurrentCategoryIndex,
-  getIsItemSelected,
 } from '../../redux/selectors/inventorySelectors';
 import { setCurrentGridBoxIndex } from '../../redux/actions/inventoryActions';
 
@@ -20,9 +18,7 @@ const GridBoxes = ({
   categoryItems,
   currentGridBoxIndex,
   setCurrentGridBoxIndex,
-  currentCategoryIndex,
   currentItem,
-  isItemSelected,
   ...props
 }) => {
   const handleClick = index => () => {
@@ -42,7 +38,6 @@ const GridBoxes = ({
             key={boxIndex}
             item={item}
             isActive={isActive}
-            isSelected={isItemSelected}
             onClick={handleClick(boxIndex)}
           />
         );
@@ -53,9 +48,7 @@ const GridBoxes = ({
 
 const mapStateToProps = createStructuredSelector({
   currentGridBoxIndex: getCurrentGridBoxIndex,
-  currentCategoryIndex: getCurrentCategoryIndex,
   currentItem: getCurrentItem,
-  isItemSelected: getIsItemSelected,
 });
 
 const mapDispatchToProps = {

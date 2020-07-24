@@ -1,16 +1,4 @@
-$decelerated-easing: (0, 0, 0.2, 1);
-$acelerated-easing: (0.4, 0, 1, 1);
-$standard-easing: (0.4, 0, 0.2, 1);
-
-$enter-duration: 230ms;
-$enter-delay: 30ms;
-$appear-duration: 240ms;
-$appear-delay: 40ms;
-
-@mixin slide-right-transition($duration, $delay, $bezier) {
-  transition: margin-right $duration $delay cubic-bezier($bezier),
-    opacity $duration $delay cubic-bezier($bezier);
-}
+@import '../../constants/sass';
 
 .ItemsGrid {
   position: relative;
